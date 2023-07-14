@@ -30,7 +30,7 @@ const Chat = () => {
     const [isCitationPanelOpen, setIsCitationPanelOpen] = useState<boolean>(false);
     const [answers, setAnswers] = useState<ChatMessage[]>([]);
     const abortFuncs = useRef([] as AbortController[]);
-    const [showAuthMessage, setShowAuthMessage] = useState<boolean>(true);
+    const [showAuthMessage, setShowAuthMessage] = useState<boolean>(false);
     
     const getUserInfoList = async () => {
         const userInfoList = await getUserInfo();
@@ -114,9 +114,9 @@ const Chat = () => {
         setIsLoading(false);
     }
 
-    useEffect(() => {
+    /* useEffect(() => {
         getUserInfoList();
-    }, []);
+    }, []); */
 
     useEffect(() => chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" }), [showLoadingMessage]);
 
