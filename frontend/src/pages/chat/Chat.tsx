@@ -8,6 +8,7 @@ import rehypeRaw from "rehype-raw";
 
 import styles from "./Chat.module.css";
 import Azure from "../../assets/Azure.svg";
+import KPMG from "../../assets/KPMG.svg";
 
 import {
     ChatMessage,
@@ -159,11 +160,11 @@ const Chat = () => {
                         {!lastQuestionRef.current ? (
                             <Stack className={styles.chatEmptyState}>
                                 <img
-                                    src={Azure}
+                                    src={KPMG}
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>KPMG MULTI DATABASE</h1>
+                                <h1 className={styles.chatEmptyStateTitle}>KITE</h1>
                                 <h2 className={styles.chatEmptyStateSubtitle}>This chatbot is configured to anwer your questions from GRCS, RISK and HR</h2>
                             </Stack>
                         ) : (
