@@ -36,17 +36,18 @@
 }
 
 .chatEmptyStateTitle {
-    font-family: "Segoe UI";
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 36px;
+    font-weight: bold;
+    font-size: 48px;
     display: flex;
     align-items: flex-end;
     text-align: center;
-    line-height: 24px;
+    line-height: 56px;
     margin-top: 36px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
+
 
 .chatEmptyStateSubtitle {
     margin-top: 20px;
@@ -63,8 +64,8 @@
 }
 
 .chatIcon {
-    height: 62px;
-    width: 62px;
+    height: 200px;
+    width: 750px;
 }
 
 .chatMessageStream {

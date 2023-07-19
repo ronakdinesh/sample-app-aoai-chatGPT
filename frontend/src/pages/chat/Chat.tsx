@@ -8,8 +8,8 @@ import rehypeRaw from "rehype-raw";
 
 import styles from "./Chat.module.css";
 import Azure from "../../assets/Azure.svg";
-import KPMG from "../../assets/KPMG.svg";
-
+import KPMG_logo_blue_RGB from "../../assets/KPMG_logo_blue_RGB.png";
+import image001 from "../../assets/image001.png";
 import {
     ChatMessage,
     ConversationRequest,
@@ -31,7 +31,7 @@ const Chat = () => {
     const [isCitationPanelOpen, setIsCitationPanelOpen] = useState<boolean>(false);
     const [answers, setAnswers] = useState<ChatMessage[]>([]);
     const abortFuncs = useRef([] as AbortController[]);
-    const [showAuthMessage, setShowAuthMessage] = useState<boolean>(false);
+    const [showAuthMessage, setShowAuthMessage] = useState<boolean>(true);
     
     const getUserInfoList = async () => {
         const userInfoList = await getUserInfo();
@@ -115,9 +115,9 @@ const Chat = () => {
         setIsLoading(false);
     }
 
-    /* useEffect(() => {
+    useEffect(() => {
         getUserInfoList();
-    }, []); */
+    }, []); 
 
     useEffect(() => chatMessageStreamEnd.current?.scrollIntoView({ behavior: "smooth" }), [showLoadingMessage]);
 
@@ -160,12 +160,11 @@ const Chat = () => {
                         {!lastQuestionRef.current ? (
                             <Stack className={styles.chatEmptyState}>
                                 <img
-                                    src={KPMG}
+                                    src={image001}
                                     className={styles.chatIcon}
                                     aria-hidden="true"
                                 />
-                                <h1 className={styles.chatEmptyStateTitle}>KITE</h1>
-                                <h2 className={styles.chatEmptyStateSubtitle}>This chatbot is configured to anwer your questions from GRCS, RISK and HR</h2>
+                                <h2 className={styles.chatEmptyStateSubtitle}>Ask a question on any KPMG internal HR, Risk or GRCS policies and processes.</h2>
                             </Stack>
                         ) : (
                             <div className={styles.chatMessageStream} style={{ marginBottom: isLoading ? "40px" : "0px"}} role="log">
